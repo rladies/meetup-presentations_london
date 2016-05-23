@@ -1,0 +1,82 @@
+---
+title: 'Tour stop: R Markdown'
+author: '[Hannah Frick](http://www.ucl.ac.uk/~ucakhfr)'
+date: "17 May 2016"
+output: html_document
+---
+
+## Motivation
+
+Possible ways to report your findings include e-mailing figures and tables around with some explanatory text or creating reports in Word, LaTeX or HTML.
+
+However, R code used to produce the figures and tables is typically not part of these documents. So in case the data change, e.g., if new data become available, the code needs to be re-run and all the figures and tables updated. This can be rather cumbersome. If code and reporting are not in the same place, it can also be a bit of a hassle to reconstruct the details of the analysis carried out to produce the results.  
+
+## Basic idea
+
+The idea of dynamic reporting is that data, code and results are all in one place. This can for example be a R Markdown document like this one. Generating the report automatically executes the analysis code and includes the results in the report.
+
+
+## Include R code
+
+### Inline code
+
+Simple pieces of code can be included inline. This can be handy to, e.g., include the number of observations in your data set dynamically. The *cars* data set, often used to illustrate the linear model, has `r nrow(cars)` observations.  
+
+### Code chunks
+
+You can include typical output like a summary of your data set and a summary of a linear model through code chunks.
+
+```{r}
+summary(cars)
+m <- lm(dist ~ speed, data = cars)
+summary(m)
+```
+
+
+#### Include tables
+
+The estimated coefficients, as well as their standard errors, t-values and p-values can also be included in the form of a table, for example through **knitr**'s `kable` function.
+
+```{r, echo = TRUE}
+library("knitr")
+kable(summary(m)$coef, digits = 2)
+```
+   
+
+#### Include figures
+
+The **trackeR** package provides infrastructure for running and cycling data in **R** and is used here to illustrate how figures can be included. 
+
+```{r, message = FALSE}
+library("trackeR") 
+data("runs", package = "trackeR")
+```
+
+A plot of how heart rate and pace evolve over time in 10 training sessions looks like this 
+
+```{r, cache = TRUE, echo = FALSE}
+p <- plot(runs, session = 1:10)
+p
+```
+
+but the plot looks better with a wider plotting window.
+
+```{r, echo = FALSE, fig.width = 10}
+p
+```
+
+HTML content like this interactive map can also be embedded (if the output format is also HTML)
+
+```{r, message = FALSE, fig.width = 8, fig.height = 8}
+## leafletRoute() is included in devel version from github
+## install.packages("devtools")
+## devtools::install_github("hfrick/trackeR")
+leafletRoute(runs, session = 23:24)
+```
+
+
+## Resources
+
+* [Markdown main page](http://daringfireball.net/projects/markdown/)
+* [R Markdown](http://rmarkdown.rstudio.com/)
+* [knitr in a nutshell](http://kbroman.org/knitr_knutshell/) tutorial by Karl Broman
