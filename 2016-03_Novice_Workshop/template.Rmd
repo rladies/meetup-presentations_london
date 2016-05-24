@@ -1,30 +1,514 @@
 ---
-title: "template"
-author: "???"
-date: "24 May 2016"
+title: "March Workshop for R Novices"
+author: "R-Ladies Coding Club (London)"
+date: "23 Mar '16"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+> *This is the FULL cribsheet for the Novice workshop. Use this document to follow along during the session. The published version on RPubs is here: http://rpubs.com/crt34/march-workshop-full*  
 
-## R Markdown
+### Schedule  
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+####1st Half  
+-- 6.30-6.35pm: A. RStudio - Basics  
+-- 6.35-6.40pm: B. Pre-loaded data - Examine  
+-- 6:40-6:50pm: C. Make your own data - Geo Chart  
+-- 6:50-6:55pm: D. ggplot2 - Set-up  
+-- 6:55-7:15pm: E. ggplot2 - Data Viz + Extensions   
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+####Break  
+-- 7:15-7.30pm  
 
-```{r cars}
-summary(cars)
+####2nd Half  
+-- 7.30-8.15pm: F. Machine Learning technique - Clustering + Extension   
+
+---
+
+> *"There's more than one way to skin a cat."*  
+
+---
+
+### A. RStudio - Basics
+
+#### (i) Open & Save new R Script  
+
+#### (ii) Running code  
+**Windows**: Alt+Enter or highlight code and click 'Run'  
+**Mac**: cmd+Enter or highlight code and click 'Run'   
+
+#### (iii) Creating R Objects
+
+```{r create objects}
+#Create object
+object <- 3 + 5 
+
+#Call object
+object
 ```
 
-## Including Plots
+---
 
-You can also embed plots, for example:
+### B. Pre-loaded Data - Examine
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+The default installation of R comes with several data sets. Bring up the listing of pre-loaded data sets:
+
+```{r pre-loaded data, eval=FALSE}
+data()
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Some of the more popular data sets used in online demos & tutorials are:
+```{r popular datasets, eval=FALSE}
+data("iris")
+data("mtcars")
+data("longley")
+data("USArrests")
+data("VADeaths")
+```
+  
+    
+Here are some useful R commands for top-line exploration of a data set (insert the name of the dataset in the brackets, e.g. `class(iris`)):
+```{r exploring datasets, eval= FALSE}
+class()
+dim()
+str()
+summary()
+head()
+tail()
+View()
+?<name of data set>
+```
+
+---
+
+### C. Make your own data - Geo Chart
+
+#### (i) Let's create a data set by hand of the popularity of specific countries as holiday destinations for the room:
+
+```{r geochart data, eval=FALSE}
+Country <-    c("United Kingdom", "France", "Spain", "Germany", "US", "Australia", "Thailand" )
+Popularity <- c(20, 25, 22, 15, 5, 5, 5)
+geodata <- data.frame(Country, Popularity)
+
+View(geodata)
+class(geodata)
+```
+
+#### (ii) Install the "googleVis" package
+
+Download "googleVis" package from CRAN via install.packages:
+```{r geochart set-up, eval=FALSE}
+install.packages("googleVis")
+```
+
+Can check package has installed via RStudio "Packages" tab. 
+
+#### (iii) Load "googleVis" to use in current session  
+
+```{r geochart library code, eval=FALSE}
+library(googleVis)
+```
+
+```{r geochart library eval, echo=FALSE}
+suppressPackageStartupMessages(library(googleVis))
+```
+
+
+#### (iv) Using the "gvisGeoChart" function from the "googleVis" package. Bring up help on the function:
+
+```{r gvisGeoChart info, eval=FALSE}
+?gvisGeoChart
+args(gvisGeoChart)
+```
+
+__Key arguments:__  
+* __data__ = a data.frame, where at least one column has location name.  
+* __locationvar__ = column name of data with the geo locations to be analysed.  
+* __colorvar__ = column name of data with the optional numeric column used to assign a color to this marker.  
+
+#### (v) Create Geo Chart from 'geodata' data frame object:
+
+```{r make geochart, eval=FALSE}
+geochart <- gvisGeoChart(geodata, 
+                         locationvar = "Country",
+                         colorvar = "Popularity")
+plot(geochart)
+```
+
+---
+
+### D. ggplot2 - Set-Up
+
+Extremely popular & widely used Graphic System in R created by Hadley Wickham. An implementation of the Grammar of Graphics concepts developed by Leland Wilkinson.
+
+Other key Graphic Systems in R are the base graphics package and lattice package.
+
+#### (i) Install the "ggplot2" package:   
+
+Download ggplot2 package from CRAN via install.packages:
+```{r install ggplot2, eval=FALSE}
+install.packages("ggplot2")
+```
+
+Can check package has installed via RStudio "Packages" tab.  
+
+#### (ii) Load "ggplot2"" to use in current session  
+
+```{r library ggplot2, results="hide"}
+library(ggplot2)
+```
+
+
+#### (iii) ggplot2 Documentation & example data sets  
+
+Documentation: http://docs.ggplot2.org/current/
+```{r ggplot doc, eval=FALSE}
+?ggplot
+```
+
+Load and examine ggplot2 example data sets:
+
+```{r ggplot data sets}
+data("economics", "diamonds")
+```
+
+---
+
+### E. ggplot2 - Data Viz  
+
+__Key Plotting Layers__   
+* __data__ = a data.frame  
+* __aes__ = short for aesthetics, defines the data to be mapped to the aesthetics of the plot    
+* __geom_xxx__ = short for geometric objects, defines the type of plot produced  
+
+#### (i) Line Chart  
+ 
+Plot a line graph of population against time:
+```{r line graph, fig.height=3, fig.width=4}
+line.graph <- ggplot(data = economics, aes(x = date, y = pop)) + geom_line()
+
+plot(line.graph)
+```
+
+
+#### (ii) Bar Chart  
+
+Plot a bar chart showing the count of diamonds by cut:
+```{r bar chart, fig.height=4, fig.width=4}
+bar.chart <- ggplot(data = diamonds, aes(x = cut)) + geom_bar()
+
+plot(bar.chart)
+```
+
+#### (iii) Box Plot  
+
+Plot a box plot showing the distribution of prices for each diamond cut:
+```{r box plot, fig.height=3.5, fig.width=5}
+box.plot <- ggplot(data = diamonds, aes(x = cut, y = price)) + geom_boxplot()
+
+plot(box.plot)
+```
+
+#### (iv) Scatterplot
+
+Make a scatterplot showing the relationship between two variables, price and carat:
+```{r scatterplot, fig.height=4, fig.width=5}
+scatterplot <- ggplot(data = diamonds, aes(x = price, y = carat)) + geom_point()
+
+plot(scatterplot)
+```
+
+---
+
+#### Extensions!!
+
+---
+
+-- **Add Labels** by adding these elements to your plot:
+```{r labels, eval=FALSE}
++ ggtitle("insert title here")
++ xlab("insert x-axis label here")
++ ylab("insert y-axis label here")
+```
+
+---
+
+-- **Change colours:**
+R automatically comes with a base colour palette, "R colors". There are 657 pre-made colours with given names which can be accessed by the `colors()` command. This is a useful doc for colour swatches: http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf  
+
+Try changing the colour (outline) or fill (solid area) of the geom_xxx, e.g.
+
+```{r geom colour, eval=FALSE}
++ geom_line(colour = "tomato")
++ geom_bar(colour = "slategrey", fill = "peachpuff")
++ geom_boxplot(colour = "navy", fill = "oldlace")
+```
+
+---
+
+-- **Subset existing plots with colour demarcation:**
+Sub-setting your plot by a factor variable by specifying an aes data mapping in the geom_xxx.   
+For example:
+```{r bar chart subset, fig.height=4, fig.width=5}
+bar.chart.subset <- ggplot(data = diamonds, aes(x = cut)) + geom_bar(aes(fill = clarity))
+
+plot(bar.chart.subset)
+```
+
+Another example:  
+**NOTE:** calling the enhanced scatterplot below takes a little while due to the volume of data, give it a moment!
+
+```{r scatterplot subset, fig.height=4, fig.width=6}
+scatterplot.subset <- ggplot(data = diamonds, aes(x = price, y = carat)) + geom_point(aes(colour = cut))
+
+plot(scatterplot.subset)
+```
+
+---
+
+-- **Faceting:**
+Facets display subsets of the data in different panels.  
+
+Try reproducing the diamonds bar chart but into 7 panels, each representing the chart for 1 of the 7 diamond "color" (D-J):
+```{r facet_grid code, eval=FALSE}
+bar.chart.facet <- ggplot(data = diamonds, aes(x = cut)) + geom_bar() + facet_grid(color~.)
+```
+Additionally, add an `aes(fill = color)` inside the geom_bar for extra demarcation:
+```{r facet_grid show, fig.height = 6, fig.width = 5}
+bar.chart.facet <- ggplot(data = diamonds, aes(x = cut)) + geom_bar(aes(fill = color)) + facet_grid(color~.)
+
+plot(bar.chart.facet)
+```
+
+---
+
+### F. Machine Learning technique - Clustering
+
+#### Intro + Steps 
+
+Clustering is a classic Machine Learning (ML) problem, where the task is to cluster your data points into groups based on similar properties. Common business applications are Market/Customer/Product Segmentation. It is classified as an *'Unsupervised'* ML problem (vs *'Supervised'*), because your data is *'unlabeled'* (vs *'labeled'*), i.e. no indication of a target classification. Thus this ML algorithm is used to look for patterns and discover/uncover structure within the data.
+
+There are several classes of clustering methods including k-means and PAM Partioning Around Medoids, both of which require upfront specification of the number of clusters in the final solution. In this exercise, we'll use the Hierarchical Agglomerative Clustering method, which outputs a complete set of solutions (from a single cluster solution to n cluster solution (n = no. of data points)).
+
+For all methods the process of grouping the data points into clusters is based on a numerical measure of *'distance'* between points, to quantify dis/similarity. In this exercise we calculate Euclidean Distance measures between pairs of data points (based on the square root of the sum of squares of the differences between corresponding elements of two vectors).
+
+* **What:** Cluster a set of 32 cars models based on road test performance stats (the pre-loaded mtcars data set)  
+* **How:** Hierarchical Agglomerative Clustering algorithm    
+* **Output:** Dendrogram data viz, membership classification  
+  
+R documentation for the `hclust` Hierarchical Agglomerative Clustering function that we're using:  
+https://stat.ethz.ch/R-manual/R-patched/library/stats/html/hclust.html  
+
+**DENODROGRAM PREVIEW:** The tree construct visualising the complete set of clustering solutions from single cluster (root) to 32 cluster (leaves), and a manually chosen 6 cluster solution:
+```{r denodrogram show, echo=FALSE}
+data(mtcars)
+mtcars.clean <- mtcars[, -c(8,9)]
+medians <- apply(mtcars.clean, 2, median)
+mads <- apply(mtcars.clean, 2, mad)
+mtcars.standardised <- scale(mtcars.clean, center = medians, scale = mads)
+mtcars.stan.dist <- dist(mtcars.standardised, method = "euclidean")
+mtcars.clust <- hclust(mtcars.stan.dist, method = "ward.D2")
+plot(mtcars.clust, hang = -1)
+rect.hclust(mtcars.clust, 6)
+```
+
+**Steps:**  
+(i)    Load & Explore data  
+(ii)   Clean data  
+(iii)  Standardise data  
+(iv)   Calculate Euclidean Distance Matrix  
+(v)    Calculate Clusters  
+(vi)   Make Dendrogram data viz  
+(vii)  Define appropriate no. of Clusters  
+(viii) Charcterise each Cluster by their variable statistics  
+(ix)   Create final Cluster Membership data  
+
+---
+
+**NOTE:** notice how we don't need to install & load any packages for this exercise? All the functions we're using here are base R!
+
+---
+
+#### (i) Load & Explore data
+Also note the critera on which we're clustering the cars:
+```{r mtcars load, results="hide"}
+data(mtcars)
+View(mtcars)
+?mtcars
+```
+
+---
+
+#### (ii) Clean data  
+
+Take out the binary variables, "vs" and "am" by removing a vector referencing their specific column positions from the original dataset, i.e. column 8 and 9:
+```{r mtcars clean, results="hide"}
+mtcars1 <- mtcars[, -c(8, 9)]
+
+#Eyeball cleaned data
+View(mtcars1)
+```
+
+---
+
+#### (iii) Standardise data  
+
+A common data pre-processing step to give the same importance to all the variables, we normalise the data so that each variable/column has a mean of 0, and a comparable range of values:
+```{r mtcars standardise}
+#Calculate the column-wise medians
+medians <- apply(mtcars1, 2, median)
+
+#Calculate the column-wise mean average standard deviation (mads)
+mads <- apply(mtcars1, 2, mad)
+
+#Update the mtcars1 data set by scaling each column by it's median and mad
+mtcars2 <- scale(mtcars1, center = medians, scale = mads)
+```
+
+```{r mtcars standardise print, eval=FALSE}
+print(mtcars2, digits=2)
+```
+
+```{r mtcars standardise output, echo=FALSE}
+#Eyeball normalised data
+print(head(mtcars2, n = 5), digits=2)
+```
+
+---
+
+#### (iv) Calculate Euclidean Distance Matrix  
+
+Calculate a matrix of dis/similarity measures between each pair of cars using the `dist` function:
+```{r distance matrix}
+#The 'method' argument specifies the distance measure to be used from number of options - here "euclidean" is chosen
+mtcars3 <- dist(mtcars2, method = "euclidean")
+```
+
+```{r distance matrix print, eval=FALSE}
+print(mtcars3, digits=2)
+```
+
+---
+
+#### (v) Calculate Clusters  
+
+Once the Euclidean Distances between every pair of cars have been calculated, we call the `hclust` function, i.e. this is where we apply the algorithm to cluster the 32 cars based on their dis/similarity:
+```{r clusters, results="hide"}
+#Default agglomeration method is Complete Linkage (distance between clusters based on largest existing pairwise dissimilarity)
+
+#Specifying Ward's minimum variance method here which minimises the total within-cluster variance (see hclust documentation)
+
+clusters <- hclust(mtcars3, method = "ward.D2")
+```
+
+---
+
+#### (vi) Make Dendrogram data viz  
+
+You can plot as-is:
+```{r plot clusters, eval=FALSE}
+plot(clusters)
+```
+
+Or plot where the labels are bottom-aligned:
+```{r plot clusters aligned}
+plot(clusters, hang = -1)
+```
+
+---
+
+#### (vii) Define appropriate no. of Clusters  
+
+Choosing a 6 cluster solution here, and visualising this on the dendrogram:
+
+```{r rect, eval=FALSE}
+rect.hclust(clusters, 6)
+```
+
+```{r cut rect, echo=FALSE}
+mtcars.clean <- mtcars[, -c(8,9)]
+medians <- apply(mtcars.clean, 2, median)
+mads <- apply(mtcars.clean, 2, mad)
+mtcars.standardised <- scale(mtcars.clean, center = medians, scale = mads)
+mtcars.stan.dist <- dist(mtcars.standardised, method = "euclidean")
+mtcars.clust <- hclust(mtcars.stan.dist, method = "ward.D2")
+plot(mtcars.clust, hang = -1)
+rect.hclust(mtcars.clust, 6)
+```
+
+Use `cutree` function to cut the tree into the 6 groups of data (clusters):
+```{r cutree, results="hide"}
+clusters.6 <- cutree(clusters, 6)
+```
+
+Use `table` function to build a contingency table of the counts for each levels of the new clusters.6 factor variable, i.e. how many cars are in each cluster:
+```{r cutree table}
+table(clusters.6)
+```
+
+---
+
+#### (viii) Charcterise each Cluster by their variable statistics  
+
+Calculate & Interpret variable stats in their standardised scale:
+```{r cluster means}
+#Use aggregate command to compute chosen summary statistics (mean) which is then applied to all subsets (the 6 clusters) of the scaled mtcars data
+means.scaled <- aggregate(mtcars2, list(clusters.6), mean)
+
+#Bring up info, formatted to 2 d.p
+options(digits = 2)
+means.scaled
+```
+
+Calculate & Interpret variable stats in their original scale:
+```{r cluster means orig}
+#Use aggregate command to compute chosen summary statistics (mean) which is then applied to all subsets (the 6 clusters) of the un-scaled mtcars data
+means.orig <- aggregate(mtcars1, list(clusters.6), mean)
+
+#Bring up info
+means.orig
+```
+
+---
+
+#### (ix) Create final Cluster Membership data  
+
+Bind the new 6 cluster factor variable to the original (cleaned) mtcars data to create an additional column indicating the computed Cluster Membership of each car:
+```{r final data}
+mtcars.membership <- cbind(clusters.6, mtcars1)
+```
+
+Display the resulting data set:
+```{r final data code, eval=FALSE}
+mtcars.membership
+```
+
+```{r final data show, echo=FALSE}
+mtcars.membership[1:6,1:10]
+```
+
+---
+
+#### Extension!!  
+
+Try one of the many packages available to created enhanced dendrogram visualisations. Here we'll create coloured leaves:
+```{r dendrogram extension, eval=FALSE}
+install.packages("sparcl")
+```
+
+```{r dendrogram extension library}
+library(sparcl)
+```
+
+```{r dendrogram extension code, eval=FALSE}
+ColorDendrogram(clusters, y = clusters.6, labels = names(clusters.6), branchlength = 5)
+```
+
+```{r dendrogram extension viz, fig.height = 5, fig.width = 7, echo = FALSE}
+ColorDendrogram(clusters, y = clusters.6, labels = names(clusters.6), branchlength = 5)
+```
+
+---
+> *Happy Coding and Happy Easter!!*
