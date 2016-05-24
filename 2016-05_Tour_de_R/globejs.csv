@@ -1,0 +1,170 @@
+City,Country,PageViews,Lat,Long
+Singapore,Singapore,2767,1.3,103.85
+London,United Kingdom,1518,51.52,-0.1
+Moscow,Russia,79,55.75,37.62
+Bristol,United Kingdom,68,51.46,-2.6
+Jakarta,Indonesia,59,-6.18,106.83
+Niagara Falls,Canada,55,43.09,-79.02
+Saint Petersburg,Russia,55,59.93,30.32
+New York,United States,48,40.67,-73.94
+Lynchburg,United States,45,37.4,-79.19
+Reykjavik,Iceland,43,64.14,-21.92
+Samara,Russia,33,53.2,50.15
+Mumbai,India,27,18.96,72.82
+Kuala Lumpur,Malaysia,26,3.16,101.71
+Bangkok,Thailand,25,13.73,100.5
+Hull,United Kingdom,18,53.75,-0.34
+Yekaterinburg,Russia,16,56.85,60.6
+New Delhi,India,15,28.6,77.22
+Beijing,China,14,39.93,116.4
+Osaka,Japan,14,34.68,135.5
+Vladivostok,Russia,14,43.13,131.9
+Amsterdam-Zuidoost,Netherlands,19,52.37,4.89
+Croydon,United Kingdom,12,51.38,-0.1
+Biysk,Russia,11,52.53,85.17
+Hook,United Kingdom,11,51.28,-1
+Cambridge,United Kingdom,10,52.51,0.13
+San Francisco,United States,10,37.77,-122.45
+Birmingham,United Kingdom,9,33.53,-86.8
+Brisbane,Australia,9,-27.46,153.02
+Chicago,United States,9,41.84,-87.68
+Ivanovo,Russia,9,57.01,40.99
+Krasnodar,Russia,9,45.03,38.98
+Mira Bhayandar,India,9,19.29,72.85
+Petworth,United Kingdom,9,51,-0.6
+Sao Paulo,Brazil,9,-23.53,-46.63
+York,United Kingdom,9,53.96,-1.11
+Atyrau,Kazakhstan,8,47.12,51.88
+Farnborough,United Kingdom,8,51.3,-0.76
+Houston,United States,8,29.77,-95.39
+Odessa,Ukraine,8,31.87,-102.35
+Arlington,United States,7,32.69,-97.13
+Chelyabinsk,Russia,7,55.15,61.43
+Cherepovets,Russia,7,59.13,37.9
+Chuo,Japan,7,35.67,139.77
+Nizhny Novgorod,Russia,7,56.3,43.94
+Penza,Russia,7,53.2,45
+Ulyanovsk,Russia,7,54.33,48.4
+Berlin,Germany,6,52.52,13.38
+Donetsk,Ukraine,6,48,37.82
+George Town,Malaysia,6,5.37,100.31
+Kazan,Russia,6,55.75,49.13
+Kharkiv,Ukraine,6,49.98,36.22
+Paris,France,6,48.86,2.34
+San Diego,United States,6,32.81,-117.14
+Socastee,United States,6,33.68,-79
+Stuttgart,Germany,6,48.79,9.19
+Tel Aviv-Yafo,Israel,6,32.07,34.77
+Volgograd,Russia,6,48.71,44.48
+Detroit,United States,5,42.38,-83.1
+Dzerzhinsk,Russia,5,56.24,43.46
+Madrid,Spain,5,40.42,-3.71
+Miass,Russia,5,55,60.09
+Minato,Japan,5,35.66,139.756
+Perm,Russia,5,58,56.25
+Tipton,United Kingdom,5,52.53,-2.1
+Toronto,Canada,5,43.65,-79.38
+Tyumen,Russia,5,57.15,65.53
+Brighton,United Kingdom,4,50.83,-0.15
+Hamilton,Bermuda,4,32.3,-64.79
+Hong Kong,Hong Kong,4,22.4,114.11
+Istanbul,Turkey,4,41.1,29
+Kostroma,Russia,4,57.77,40.93
+Krasnoyarsk,Russia,4,56.02,93.06
+Maidenhead,United Kingdom,4,51.53,-0.74
+Manila,Philippines,4,14.62,120.97
+Neryungri,Russia,4,56.67,124.71
+Novosibirsk,Russia,4,55.04,82.93
+Sunset Hills,United States,4,38.54,-90.14
+Sydney,Australia,4,46.15,-60.17
+Baku,Azerbaijan,3,40.39,49.86
+Bogota,Colombia,3,4.63,-74.09
+Boston,United States,3,42.34,-71.02
+Bradford,United Kingdom,3,53.8,-1.75
+Chatham,United Kingdom,3,51.38,0.51
+Da Nang,Vietnam,3,16.07,108.21
+Dublin,Ireland,3,53.33,-6.25
+Frankfurt,Germany,3,50.12,8.68
+Kaliningrad,Russia,3,54.71,20.45
+Makati,Philippines,3,14.55,121.02
+Milan,Italy,3,45.48,9.19
+Nakhodka,Russia,3,42.83,132.89
+Petaling Jaya,Malaysia,3,3.1,101.62
+Potters Bar,United Kingdom,3,51.7,-0.19
+San Jose,United States,3,37.3,-121.85
+Seoul,South Korea,3,37.57,127
+Slough,United Kingdom,3,51.52,-0.61
+Southampton,United Kingdom,3,50.91,-1.41
+Stockholm,Sweden,3,59.33,18.07
+Sunnyvale,United States,3,37.39,-122.03
+Taipei,Taiwan,3,25.02,121.45
+The Hague,Netherlands,3,52.07,4.3
+Ufa,Russia,3,54.78,56.04
+Valencia,Spain,3,39.48,-0.39
+Vienna,Austria,3,48.22,16.37
+Voronezh,Russia,3,51.72,39.26
+Almaty,Kazakhstan,2,43.32,76.92
+Angarsk,Russia,2,52.57,103.91
+Aurora,United States,2,39.71,-104.73
+Barcelona,Spain,2,41.4,2.17
+Barnaul,Russia,2,53.36,83.75
+Basingstoke,United Kingdom,2,51.27,-1.11
+Bayan Lepas,Malaysia,2,5.29,100.26
+Belgrade,Serbia,2,44.83,20.5
+Bellevue,United States,2,47.6,-122.16
+Biel/Bienne,Switzerland,2,47.15,7.24
+Bromsgrove,United Kingdom,2,52.34,-2.06
+Buenos Aires,Argentina,2,-34.61,-58.37
+Burnaby,Canada,2,49.25,-123
+Cairo,Egypt,2,30.06,31.25
+Chineham,United Kingdom,2,51.29,-1.06
+College Station,United States,2,30.6,-96.31
+Columbus,United States,2,39.99,-82.99
+Coventry,United Kingdom,2,52.42,-1.5
+Dallas,United States,2,32.79,-96.77
+Damascus,Syria,2,33.5,36.32
+Elektrostal,Russia,2,55.79,38.44
+Faro,Portugal,2,37.03,-7.94
+Gelugor,Malaysia,2,5.48,100.5
+Goiania,Brazil,2,-16.72,-49.26
+Guangzhou,China,2,23.12,113.25
+Hefei,China,2,31.85,117.28
+Helsinki,Finland,2,60.17,24.94
+Incheon,South Korea,2,37.46,126.71
+Izhevsk,Russia,2,56.85,52.23
+Kaluga,Russia,2,54.54,36.27
+Kobe,Japan,2,34.68,135.17
+Korolyov,Russia,2,55.92,37.82
+Krasnogorsk,Russia,2,55.83,37.33
+Lincoln,United Kingdom,2,53.25,-0.55
+Mirny,Russia,2,62.53,114
+Molesey,United Kingdom,2,51.4,-0.36
+Montgomery,United States,2,32.35,-86.28
+Munich,Germany,2,48.14,11.58
+New Orleans,United States,2,30.07,-89.93
+Newtownards,United Kingdom,2,54.6,-5.7
+Norwich,United Kingdom,2,52.65,1.28
+Oxford,United Kingdom,2,51.76,-1.26
+Palo Alto,United States,2,37.4,-122.14
+Pekanbaru,Indonesia,2,0.51,101.45
+Perth,Australia,2,-31.96,115.84
+Phoenix,United States,2,33.54,-112.07
+Quito,Ecuador,2,-0.19,-78.5
+Reigate,United Kingdom,2,51.24,-0.22
+Rome,Italy,2,41.89,12.5
+Sandton,South Africa,2,-26.11,28.06
+Santa Clara,United States,2,37.37,-121.97
+Seattle,United States,2,47.62,-122.35
+Shanghai,China,2,31.23,121.47
+Shinjuku,Japan,2,35.69,139.7
+Shuya,Russia,2,56.85,41.36
+Sochi,Russia,2,43.6,39.73
+Spencerport,United States,2,43.19,-77.8
+Temirtau,Kazakhstan,2,50.07,72.96
+Tomsk,Russia,2,56.5,84.97
+Tonsberg,Norway,2,59.27,10.42
+Tula,Russia,2,54.2,37.61
+Vancouver,Canada,2,49.28,-123.13
+Xi'an,China,2,34.27,108.9
+Xuzhou,China,2,34.27,117.18
+Zlatoust,Russia,2,55.17,59.65
