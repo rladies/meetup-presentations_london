@@ -185,8 +185,7 @@ library(threejs)
 #### (ii) Create Scatterplot
 
 ```{r thing scatterplot, eval=FALSE}
-scatterplot3js(burger$proportions, burger$ingredients, burger$patty, flip.y=FALSE)
-#flip.y to control direction of y-axis
+scatterplot3js(burger$proportions, burger$ingredients, burger$patty, flip.y=FALSE) #flip.y to control direction of y-axis
 ```
 
 #### (iii) Customise Scatterplot
