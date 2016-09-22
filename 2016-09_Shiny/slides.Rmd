@@ -33,12 +33,6 @@ You MUST have the following installed to participate:
 
 ## Agenda
 
-```{r}
-
-try()
-
-```
-
 * Background
     - Example Use-Case: Diamonds
     - ui & server components
