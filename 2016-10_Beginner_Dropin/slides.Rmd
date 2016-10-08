@@ -1,0 +1,51 @@
+---
+title: An introduction to R
+subtitle: Beginners drop-in session
+author: R-ladies London team | @RladiesLondon
+date: 26th October 2016
+output: 
+  ioslides_presentation:
+    smaller: true
+    css: custom.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      eval = FALSE)
+```
+
+# Basics
+
+## Dependencies
+
+You MUST have the following installed to participate:
+
+> - R [https://www.r-project.org/](https://www.r-project.org/)
+
+> - RStudio [https://www.rstudio.com/](https://www.rstudio.com/) <br><br> product -> Rstudio -> Desktop -> Open Source Edition<br>
+
+# What's the plan for today?
+
+## Agenda
+
+* What's R?
+
+* What's RStudio? Why do we need it? Is R not enough?
+
+* R documentation pages, Rseek and Stackoverflow
+
+* Load & explore a dataset
+
+* Basic plots
+
+# Let's start!
+
+## What's R?
+
+## What's RStudio? Why do we need it? Is R not enough?
+
+## R documentation pages, Rseek and Stackoverflow
+
+## Load & explore a dataset
+
+## Basic plots
