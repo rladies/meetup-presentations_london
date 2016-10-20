@@ -45,7 +45,61 @@ You MUST have the following installed to participate:
 ## What's RStudio? Why do we need it? Is R not enough?
 
 ## R documentation pages, Rseek and Stackoverflow
+How to get to the in-built help pages
+```{r} ?boxplot 
+```
+
+## Setting your working directory
+Check where your working directory is- this is the location where all files and functions will be read and written to
+```{r}
+getwd()
+```
+If this isn't where your files are then you can set it through (put your own path in the quotes!)
+```{r eval=FALSE} setwd("C:\Documents\mypath") 
+```
+Or in Rstudio you can go: Session>Set Working Directory>Choose Directory and navigate to your folder
 
 ## Load & explore a dataset
 
+Have a look at the in-built data sets in R
+```{r eval=FALSE}
+data()
+```
+
+#Look at the in-built data set on trees
+```{r eval=FALSE}
+trees
+```
+
+#Explore the trees data set
+The top of the data ```{r} head(trees)```
+The end of the data set ```{r} tail(trees) ```
+The size and type of the data ```{r} str(trees) ```
+Summary statistics on each of the fields ```{r} summary(trees) ```
+Pull out only one of the fields ```{r} summary(trees$Girth) ```
+
 ## Basic plots
+
+Create your first plot
+```{r}
+boxplot(trees)
+```
+Create another variable with only one of the fields and plot that
+```{r}
+treeGirth<-trees$Girth
+boxplot(treeGirth)
+boxplot(treeGirth,xlab="Girth (units)",title="Tree Girths")
+```
+
+## Where to go next
+It would be best if you can get your own data and start exploring that.
+Make sure that your working directory is set to your file's location
+```{r eval=FALSE} data<-read.csv("myfile.csv")
+```
+
+Great tutorials:
+edx MiT course: https://www.edx.org/course/analytics-edge-mitx-15-071x-2
+DataCamp: https://www.datacamp.com/
+Coursera: https://www.coursera.org/learn/r-programming
+Great Kaggle Tutorials: https://www.kaggle.com/mrisdal/titanic/exploring-survival-on-the-titanic
+
