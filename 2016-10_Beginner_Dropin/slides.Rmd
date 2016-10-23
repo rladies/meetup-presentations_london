@@ -3,10 +3,10 @@ title: "An introduction to R"
 author: "R-ladies London team | @RladiesLondon"
 date: "26th October 2016"
 output:
-  beamer_presentation: default
   ioslides_presentation:
     css: custom.css
     smaller: yes
+  beamer_presentation: default
 subtitle: Beginners session + Q&A
 ---
 
