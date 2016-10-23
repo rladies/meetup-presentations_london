@@ -1,12 +1,13 @@
 ---
-title: An introduction to R
-subtitle: Beginners drop-in session
-author: R-ladies London team | @RladiesLondon
-date: 26th October 2016
-output: 
+title: "An introduction to R"
+author: "R-ladies London team | @RladiesLondon"
+date: "26th October 2016"
+output:
+  beamer_presentation: default
   ioslides_presentation:
-    smaller: true
     css: custom.css
+    smaller: yes
+subtitle: Beginners session + Q&A
 ---
 
 ```{r setup, include=FALSE}
@@ -14,49 +15,112 @@ knitr::opts_chunk$set(echo = TRUE,
                       eval = FALSE)
 ```
 
-# Basics
-
-## Dependencies
-
-You MUST have the following installed to participate:
-
-> - R [https://www.r-project.org/](https://www.r-project.org/)
-
-> - RStudio [https://www.rstudio.com/](https://www.rstudio.com/) <br><br> product -> Rstudio -> Desktop -> Open Source Edition<br>
-
-# What's the plan for today?
-
-## Agenda
-
-* What's R?
-
-* What's RStudio? Why do we need it? Is R not enough?
-
-* R documentation pages, Rseek and Stackoverflow
-
-* Load & explore a dataset
-
-* Basic plots
-
-# Let's start!
-
 ## What's R?
 
-## What's RStudio? Why do we need it? Is R not enough?
+In origin was __S__, a programming language for statistical computing and interactive graphics. It was developed by John Chambers, Rick Becker and Allan Wilks of (NOKIA) Bell Laboratories in 1976. 
 
-## R documentation pages, Rseek and Stackoverflow
-How to get to the in-built help pages
-```{r} ?boxplot 
+<!--- At that time statistical computing was done by directly calling Fortran subroutines; however, S was designed to offer an alternate and more interactive approach. -->
+
+S went through many version updates (1-4, 5 plus...) until in 1992 Ross Ihaka and Robert Gentleman (University of Auckland, New Zealand) worked on a further implementation and renamed it __R__.
+
+![Ross Ihaka](images/Ihaka.png) ![Robert Gentleman](images/Gentleman.png)
+
+<!--- There are some differences (e.g. in S y_2 is equal to y=2, in R y_2 is just a string/object), but much of the code written for S runs unaltered in R. -->
+
+R is currently developed by the __R Development Core Team__, of which Chambers is a member. It is a Free Software, available under a GNU General Public License. It compiles and runs on a wide variety of platforms (including Linux, Windows and MacOS).
+
+<!--- The project was conceived in 1992, with an initial version released in 1995 and a stable beta version in 2000. -->
+
+_(Wikipedia)_
+
+# Let's install the software
+
+## Install R
+
+Go to the R-project website, download and install R: 
+
+[https://www.r-project.org/](https://www.r-project.org/)
+
+The default Graphical User Interface (GUI) is basically a console!
+
+![RGui in Windows](images/Rconsole.png) ![R in Linux/Mac](images/Rlinux.png)
+
+## Your turn!
+
+> - Open an R instance
+> - Top line in the opening message: __R version number (release date) and name__
+> - Try the functions __license()__, __help()__ and __q()__ 
+> - Use R as a basic calculator (+ - / \*): 2 \* 3 
+> - You can assign a value to a variable using either __<-__ or __=__
+> - Define variable 'a' equal to 1: a <- 1
+> - Define variable 'b' equal to 3 and calculate 'a+b': b <- 3; a+b
+> - Note the semicolon (;) is used to concatenate multiple operations in one line.
+> - __Let's face it, using R from console is not very appealing! For complex operations you need to have an editor, check your environmental variables, visualise plots without switching window...that's why we use RStudio!__ 
+
+<!--- Show where to find R version number and name, basic instructions. Point out limitations of using an R console vs an IDE like RStudio. Ctrl-L to clear the console. -->
+
+## Install RStudio
+
+RStudio is an Integrated Development Environment (IDE) specifically designed for the R language.
+
+Go to the RStudio website, download and install R: 
+
+RStudio [https://www.rstudio.com/](https://www.rstudio.com/) <br><br> product -> Rstudio -> Desktop -> Open Source Edition<br>
+
+![RStudio](images/RStudio.png)
+
+## Pre-installed packages
+
+The basic R installation comes with a number of pre-installed packages (e.g. base, graphics, stats...). A package is a container of functions, for instance the functions c() and mean() are in the __base__ package, plot() is in the __graphics__ package, ect.
+
+```{r, eval = TRUE, fig.height=3}
+x <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+mean(x)
+
+plot(x)
 ```
 
+## Install additional packages
+
+There are ~8000 R packages available on the Comprehensive R Archive Network (CRAN). 
+
+```{r, eval = FALSE}
+# Install a new package for advanced graphics
+install.packages("ggplot2")
+
+# Load the package
+library("ggplot2")
+```
+
+## Need help? R documentation pages, Rseek and Stackoverflow
+
+How to get to the in-built help pages
+```{r} 
+?boxplot 
+```
+
+Other ways to find help:
+
+> - Browse [http://rseek.org/](http://rseek.org/) to find out what packages are available for a given topic (e.g. cluster analysis)
+
+> - If you get stuck, Google is your friend!
+
+> - If that doesn't work, post a question on [http://stackoverflow.com/](http://stackoverflow.com/)!
+
 ## Setting your working directory
+
 Check where your working directory is- this is the location where all files and functions will be read and written to
+
 ```{r}
 getwd()
 ```
+
 If this isn't where your files are then you can set it through (put your own path in the quotes!)
-```{r eval=FALSE} setwd("C:\Documents\mypath") 
+
+```{r eval=FALSE} 
+setwd("C:\Documents\mypath") 
 ```
+
 Or in Rstudio you can go: Session>Set Working Directory>Choose Directory and navigate to your folder
 
 ## Load & explore a dataset
@@ -66,40 +130,68 @@ Have a look at the in-built data sets in R
 data()
 ```
 
-#Look at the in-built data set on trees
-```{r eval=FALSE}
+## Look at the in-built data set on trees
+
+```{r eval=TRUE}
 trees
 ```
 
-#Explore the trees data set
-The top of the data ```{r} head(trees)```
-The end of the data set ```{r} tail(trees) ```
-The size and type of the data ```{r} str(trees) ```
-Summary statistics on each of the fields ```{r} summary(trees) ```
-Pull out only one of the fields ```{r} summary(trees$Girth) ```
+## Explore the trees data set
+
+The top of the data 
+```{r} 
+head(trees)
+```
+
+The end of the data set 
+```{r} 
+tail(trees) 
+```
+
+The size and type of the data 
+```{r} 
+str(trees) 
+```
+
+Summary statistics on each of the fields 
+```{r} 
+summary(trees) 
+```
+
+Pull out only one of the fields 
+```{r} 
+summary(trees$Girth) 
+```
 
 ## Basic plots
 
 Create your first plot
-```{r}
+```{r, eval=TRUE}
 boxplot(trees)
 ```
+
+## Basic plots
+
 Create another variable with only one of the fields and plot that
-```{r}
-treeGirth<-trees$Girth
-boxplot(treeGirth)
-boxplot(treeGirth,xlab="Girth (units)",title="Tree Girths")
+```{r, eval=TRUE, fig.height=4}
+treeGirth <- trees$Girth
+boxplot(treeGirth, xlab="Girth (units)", title="Tree Girths")
+```
+
+## Import data from a csv file
+
+It would be best if you can get your own data and start exploring that.
+Make sure that your working directory is set to your file's location
+```{r eval=FALSE} 
+data <- read.csv("myfile.csv")
 ```
 
 ## Where to go next
-It would be best if you can get your own data and start exploring that.
-Make sure that your working directory is set to your file's location
-```{r eval=FALSE} data<-read.csv("myfile.csv")
-```
 
 Great tutorials:
-edx MiT course: https://www.edx.org/course/analytics-edge-mitx-15-071x-2
-DataCamp: https://www.datacamp.com/
-Coursera: https://www.coursera.org/learn/r-programming
-Great Kaggle Tutorials: https://www.kaggle.com/mrisdal/titanic/exploring-survival-on-the-titanic
+
+- edx MiT course: https://www.edx.org/course/analytics-edge-mitx-15-071x-2
+- DataCamp: https://www.datacamp.com/
+- Coursera: https://www.coursera.org/learn/r-programming
+- Great Kaggle Tutorials: https://www.kaggle.com/mrisdal/titanic/exploring-survival-on-the-titanic
 
