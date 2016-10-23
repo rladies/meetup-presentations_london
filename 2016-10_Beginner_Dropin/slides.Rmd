@@ -1,6 +1,6 @@
 ---
-title: "An introduction to R"
-author: "R-ladies London team | @RladiesLondon"
+title: "An Introduction to R"
+author: "R-Ladies London team | @RLadiesLondon"
 date: "26th October 2016"
 output:
   ioslides_presentation:
@@ -75,7 +75,7 @@ __q()__
 
 > - Try the functions __license()__, __help()__ and __q()__ 
 
-> - __For complex operations you might need to have an editor, check your environmental variables, visualise plots without switching window... that's why we recommend to use RStudio!__ 
+> - __For complex operations you might need to have an editor, check your environmental variables, visualise plots without switching windows... that's why we recommend to use RStudio!__ 
 
 <!--- Show where to find R version number and name, basic instructions. Point out limitations of using an R console vs an IDE like RStudio. Ctrl-L to clear the console. -->
 
@@ -94,7 +94,7 @@ download and install RStudio Open Source Edition:
 
 ## Basic operations, like a calculator
 
-We have already R can be used as a calculator. 
+R can be used as a calculator. 
 
 You can enter an expression to evaluated and hit enter (if you use the command line) or click the Run button (if you use Rstudio) to compute the result.
 
@@ -166,7 +166,7 @@ Elements of basic type can be combined to form complex data objects such as:
 
 ## Objects
 
-A __vector__ is a sequence of data elements of the same basic type. To create a vector we can concatenate a list of numbers using the function __c()__.
+A __vector__ is a sequence of data elements of the same basic type. To create a vector we can concatenate a list of elements using the function __c()__.
 
 A __matrix__ is a 2 dimensional table in which every element is of the same type. To create a matrix we use the function __matrix()__.
 
@@ -277,7 +277,7 @@ If this isn't where your files are then you can set it through (put your own pat
 setwd("C:\Documents\mypath") 
 ```
 
-Or in Rstudio you can go: Session>Set Working Directory>Choose Directory and navigate to your folder
+Or in Rstudio you can go to: Session > Set Working Directory > Choose Directory and navigate to your folder
 
 
 ## Example data
@@ -339,8 +339,7 @@ boxplot(trees)
 
 Create another variable with only one of the fields and plot that
 ```{r, eval=TRUE, fig.height=4}
-treeGirth <- trees$Girth
-boxplot(treeGirth, xlab="Girth (units)", title="Tree Girths")
+boxplot(trees$Girth, xlab="Girth (units)", title="Tree Girths")
 ```
 
 ## Export/Import a table (data.frame) to/from text file
@@ -409,7 +408,7 @@ Some examples are:
 
 <br>
 
-R can also connect to databases (e.g. postgresql)
+R can also connect to databases (e.g. postgresql).
 
 
 ## Install additional packages
@@ -451,13 +450,13 @@ help(print)
 
 You can also:
 
-* Browse [Rseek](http://rseek.org/) to find out what packages are available for a given topic (e.g. cluster analysis)
+* Browse [Rseek](http://rseek.org/) to find out which packages are available for a given topic (e.g., cluster analysis)
 
 * Join the [R users forum](http://r.789695.n4.nabble.com/)
 
 * [Google your problem](http://www.google.com/)
 
-* Post a question on [Stackoverflow](http://stackoverflow.com/)
+* Post a question on [stack overflow](http://stackoverflow.com/)
 
 
 ## Cheat Sheets & Reference Guides
@@ -466,7 +465,7 @@ You can also:
 
 * [Writing R extensions](http://bit.ly/1H0U02a)
 
-* [Google's R Style Guide](http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml)
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml)
 
 * RStudio website
     - [Data Visualization](http://bit.ly/1Foy1Lb)
