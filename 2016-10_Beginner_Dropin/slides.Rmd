@@ -5,7 +5,8 @@ date: "26th October 2016"
 output:
   ioslides_presentation:
     css: custom.css
-    smaller: yes
+    # widescreen: true
+    smaller: true
   beamer_presentation: default
 subtitle: Beginners session + Q&A
 ---
@@ -14,6 +15,15 @@ subtitle: Beginners session + Q&A
 knitr::opts_chunk$set(echo = TRUE, 
                       eval = TRUE)
 ```
+
+## What's R-ladies?
+
+R-ladies is a world-wide organization to promote gender diversity in the R community.
+
+<img src="images/map.png" alt="Figure" style="height:450px;">
+
+<!--- ToDo ## Who's R-ladies London team?
+Add photos and names -->
 
 ## What's R?
 
@@ -96,7 +106,7 @@ download and install RStudio Open Source Edition:
 
 R can be used as a calculator. 
 
-You can enter an expression to evaluated and hit enter (if you use the command line) or click the Run button (if you use Rstudio) to compute the result.
+You can enter an expression to evaluate and hit enter (if you use the command line) or click the Run button (if you use Rstudio) to compute the result.
 
 - Use __\*__ for multiply.
 
