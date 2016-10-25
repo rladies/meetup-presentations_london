@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE,
 
 ## What's R-ladies?
 
-R-ladies is a world-wide organization to promote gender diversity in the R community.
+R-ladies is a world-wide organization to promote gender diversity in the R community: [https://rladies.org/](https://rladies.org/)
 
 <img src="images/map.png" alt="Figure" style="height:450px;">
 
