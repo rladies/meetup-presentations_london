@@ -5,7 +5,7 @@ date: "26th October 2016"
 output:
   ioslides_presentation:
     css: custom.css
-    # widescreen: true
+    widescreen: true
     smaller: true
   beamer_presentation: default
 subtitle: Beginners session + Q&A
@@ -349,15 +349,15 @@ boxplot(trees)
 
 Create another variable with only one of the fields and plot that
 ```{r, eval=TRUE, fig.height=4}
-boxplot(trees$Girth, xlab="Girth (units)", title="Tree Girths")
+boxplot(trees$Girth, xlab = "Girth (units)", main = "Tree Girths")
 ```
 
 ## Export/Import a table (data.frame) to/from text file
 
-```{r}
-write.csv(iris,"~/iris.csv")
+```{r, eval = FALSE}
+write.csv(x = iris, file = "iris.csv")
 
-myTable <- read.csv("~/iris.csv")
+myTable <- read.csv(file = "iris.csv")
 
 head(myTable)
 ```
@@ -366,7 +366,7 @@ head(myTable)
 ## Work with remote files
 
 ```{r}
-myTable2 <- read.csv("http://www.ats.ucla.edu/stat/data/hsb2.csv")
+myTable2 <- read.csv(file = "http://www.ats.ucla.edu/stat/data/hsb2.csv")
 
 head(myTable2)
 ```
@@ -379,10 +379,10 @@ Rds stores a single R object, use readRDS() and saveRDS() to read in and save re
 ```{r, eval=FALSE}
 ## save a single object to file
 pippo <- c(1,2,4)
-saveRDS(pippo, "pippo.rds")
+saveRDS(object = pippo, file = "pippo.rds")
 
 ## restore it under a different name
-pippo2 <- readRDS("pippo.rds")
+pippo2 <- readRDS(file = "pippo.rds")
 ```
 
 RData (or rda) allows to save(), load(), attach() multiple data objects in one file.
@@ -391,10 +391,10 @@ RData (or rda) allows to save(), load(), attach() multiple data objects in one f
 ## save two objects to one file
 pippo <- c(1,2,4)
 pluto <- c(3,5,4)
-save(pippo, pluto, file= "x.rda")
+save(pippo, pluto, file = "x.rda")
 
 ## restore the objects
-load("x.rda")
+load(file = "x.rda")
 ```
 
 
