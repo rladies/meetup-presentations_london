@@ -1,0 +1,55 @@
+---
+title: "Cit- and Cit+ genome size analysis"
+author: "Vicky Butt"
+output:
+  html_document: default
+  pdf_document: default
+data: April 19, 2017
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+### Metadata
+
+```{r metadata}
+# Load metadata
+metadata <- read.csv("../data/Ecoli_metadata.csv")
+```
+
+### T-test
+
+```{r t-test}
+# Load dplyr
+library("dplyr")
+
+# Create new dataframe
+metadata_cit <- metadata %>%
+  filter(cit %in% c("plus", "minus")) %>%
+  select(genome_size, cit)
+
+# Run Welch Two Sample t-test
+t.test(genome_size ~ cit, data = metadata_cit)
+```
+
+### Boxplot
+
+```{r boxplot}
+# Load ggplot2
+library("ggplot2")
+
+# Load ggsignif
+library("ggsignif")
+
+# Boxplot of genome size for each citrate-using mutant status
+ggplot(metadata, aes(x = cit, y = genome_size, fill = cit)) +
+  geom_boxplot() +
+	geom_signif(test = "t.test", comparisons = list(c("minus", "plus")), map_signif_level=TRUE) +
+  ggtitle("Boxplot of genome size by citrate mutant type") +
+	xlab("citrate mutant") +
+	ylab("genome size") +
+	theme(axis.text.x = element_text(angle=45, hjust=1),
+          axis.title = element_text(size = rel(1.25)),
+          axis.text = element_text(size = rel(1.25)))
+```
