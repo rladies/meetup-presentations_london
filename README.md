@@ -8,6 +8,7 @@ R-Ladies London founded in March 2016.
   - [2017-01_Demystifying_Data_Science](https://github.com/rladies/meetup-presentations_london/tree/master/2017-01_Demystifying_Data_Science)
   - [2017-02_Reproducible_R_Docs_in_GitHub](http://stephlocke.info/Rtraining/reproducibledocs.html#/)
   - [2017-03_DataScienceCV_and_useRParticipation](https://github.com/rladies/meetup-presentations_london/tree/master/2017-03_DataScienceCV_and_useRParticipation)
+  - [2017-04 Researchers and Students Launch Talk and Workshop](https://github.com/rladies/meetup-presentations_london/tree/master/2017-04_Researchers_and_Students_workshop)
 
 ## 2016
   - [2016-03_Launch_Event](https://github.com/rladies/meetup-presentations_london/tree/master/2016-03_Launch_Event)
