@@ -11,7 +11,7 @@ R-Ladies London founded in March 2016.
 - [2017-03 DataScience CV and useR! Participation](https://github.com/rladies/meetup-presentations_london/tree/master/2017-03_DataScienceCV_and_useRParticipation)
 - [2017-04 Make your own blog](https://github.com/rladies/meetup-presentations_london/tree/master/2017-04-26_Make_your_own_blog)
 - [2017-04 Researchers and Students Launch Talk and Workshop](https://github.com/rladies/meetup-presentations_london/tree/master/2017-04_Researchers_and_Students_workshop)
-- [2017-06_Machine-Learning](https://github.com/BasiaFusinska/RMachineLearning)
+- [2017-06 Machine Learning](https://github.com/BasiaFusinska/RMachineLearning)
 
 ## 2016
 
