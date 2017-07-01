@@ -23,7 +23,7 @@ R-Ladies London founded in March 2016.
 - [2016-06 June Workshop](https://github.com/rladies/meetup-presentations_london/tree/master/2016-06_June_Workshop)
 - [2016-08 Data Driven Museum and useR! 2016 Review](https://github.com/rladies/meetup-presentations_london/tree/master/2016-08_DataDrivenMuseum_and_useR2016Review)
 - [2016-09 Shiny](https://github.com/rladies/meetup-presentations_london/tree/master/2016-09_Shiny)
-- [2016-10_Predictive_Modelling_and_caret](https://github.com/topepo/R-Ladies-London)
+- [2016-10 Predictive Modelling and caret](https://github.com/topepo/R-Ladies-London)
 - [2016-10 Beginners Drop-in](https://github.com/rladies/meetup-presentations_london/tree/master/2016-10_Beginner_Dropin)
 - [2016-12 H2O in R and Python](https://github.com/h2oai/h2o-meetups/tree/master/2016_12_01_London_RLadies_PyLadies_H2O_in_R_and_Python)
 - [2016-12 R-Ladies London Review 2016](https://github.com/rladies/meetup-presentations_london/tree/master/2016-12_R-Ladies_London_Review_2016)
