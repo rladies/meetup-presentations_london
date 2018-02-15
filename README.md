@@ -4,6 +4,11 @@
 
 R-Ladies London founded in March 2016.
 
+## 2018
+
+- [2017-10 R from scratch](https://github.com/KKulma/meetup-presentations_london/tree/master/2018-02-21-R_from_scratch)
+
+
 ## 2017
 
 - [2017-01 Demystifying Data Science](https://github.com/rladies/meetup-presentations_london/tree/master/2017-01_Demystifying_Data_Science)
