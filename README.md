@@ -8,6 +8,8 @@ R-Ladies London founded in March 2016.
 
 - [2017-10 R from scratch](https://github.com/KKulma/meetup-presentations_london/tree/master/2018-02-21-R_from_scratch)
 - [2018-03 Dive into dplyr](https://github.com/KKulma/meetup-presentations_london/tree/master/2018-03_Dive_into_dplyr)
+- [2018-04 Lightening Talks](https://github.com/KKulma/meetup-presentations_london/tree/master/2018-04_Lightenting_talks)
+
 
 
 
