@@ -20,6 +20,7 @@ R-Ladies London founded in March 2016.
 - [2017-04 Researchers and Students Launch Talk and Workshop](https://github.com/rladies/meetup-presentations_london/tree/master/2017-04_Researchers_and_Students_workshop)
 - [2017-06 Machine Learning](https://github.com/BasiaFusinska/RMachineLearning)
 - [2017-10 R from scratch](https://github.com/rladies/meetup-presentations_london/tree/master/2017-10-19_R_from_scratch)
+- [2017-11 Lightening Talks](https://github.com/rladies/meetup-presentations_london/tree/master/2017-11_Lightening_talks)
 
 ## 2016
 
