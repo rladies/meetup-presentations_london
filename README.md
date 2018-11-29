@@ -9,6 +9,7 @@ R-Ladies London founded in March 2016.
 - [2018-02 R from scratch](https://github.com/KKulma/meetup-presentations_london/tree/master/2018-02-21-R_from_scratch)
 - [2018-03 Dive into dplyr](https://github.com/KKulma/meetup-presentations_london/tree/master/2018-03_Dive_into_dplyr)
 - [2018-04 Lightening Talks](https://github.com/rladies/meetup-presentations_london/tree/master/2018-04_Lightenting_talks)
+- [2018-07 Shiny Dashboard Workshop](https://github.com/rladies/meetup-presentations_london/tree/master/2018-07_Shiny_Dashboard_Workshop)
 - [2018-011 Making a difference in R and Open Source](https://github.com/rladies/meetup-presentations_london/tree/master/2018-11_Making_a_diff_open_source)
 
 
