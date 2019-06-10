@@ -5,7 +5,7 @@
 R-Ladies London founded in March 2016.
 
 ## 2019
-- [2018-05 Bioinformatics, ML in regulation and data.table](https://github.com/KKulma/meetup-presentations_london/tree/master/2019-05_Bioinformatics_MLinRegulation_datatable)
+- [2018-05 Bioinformatics, ML in regulation and data.table](https://github.com/rladies/meetup-presentations_london/tree/master/2019-05_Bioinformatics_MLinRegulation_datatable)
 
 
 ## 2018
